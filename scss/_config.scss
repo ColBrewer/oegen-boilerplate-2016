@@ -1,0 +1,103 @@
+/******************************************************
+	
+	CONFIG & SETTINGS
+
+	Set consistent global paramenters
+
+******************************************************/
+
+
+/*
+	
+	Colour's
+
+	Requires: Sass 3.3+, 'palette' mixin function (incl. in _mixins.scss)
+	Set colour palette using Sass Maps - http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+	Single variables can be used where appropriate e.g '$white: rgb(255,255,255);'
+
+	--EXAMPLE--
+	
+	$_color-base-grey: rgb(229,231,234);
+
+	$palettes: (
+	    purple: (
+	        base:   rgb(42,40,80),
+	        light:  rgb(51,46,140),
+	        dark:   rgb(40,38,65)
+	    ),
+	    grey: (
+	        base:  $_color-base-grey,
+	        light: lighten($_color-base-grey, 10%),
+	        dark: darken($_color-base-grey, 10%)
+	    )
+	);
+
+	Add tones using the following naming convention:
+
+		x-dark
+		dark 
+		mid-dark
+		base 
+		mid-light
+		light 
+		x-light
+
+	Usage:
+
+		a {
+		    color: palette(purple);
+		    &:hover {
+		        color: palette(purple, light);
+		    }
+		}
+
+*/
+
+$white: #fff;
+$base: #222;
+
+
+$pink: #f48d7e;
+$orange: #f69257;
+
+
+$_color-base-grey: rgb(90,90,90);
+$_color-base-blue: rgb(31,169,224);
+$_color-base-yellow: rgb(253,193,38);
+
+
+
+
+
+
+$palettes: (
+    grey: (
+    	xx-light: lighten($_color-base-grey, 50%),
+    	x-light: lighten($_color-base-grey, 30%),
+    	light: lighten($_color-base-grey, 10%),
+        base:  $_color-base-grey,
+        dark: darken($_color-base-grey, 10%)
+    ),
+    blue: (
+    	x-light: lighten($_color-base-blue, 44%),
+    	light: lighten($_color-base-blue, 20%),
+        base:  $_color-base-blue,
+        dark: darken($_color-base-blue, 10%)
+    ),
+    yellow: (
+    	x-light: lighten($_color-base-yellow, 30%),
+    	light: lighten($_color-base-yellow, 10%),
+        base:  $_color-base-yellow,
+        dark: darken($_color-base-yellow, 10%)
+    )
+);
+
+
+
+/*
+	widths
+*/
+
+$max-width: 90em;
+
+$max-width-video: 120em;

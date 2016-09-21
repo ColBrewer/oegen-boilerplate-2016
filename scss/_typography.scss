@@ -1,0 +1,392 @@
+/******************************************************
+    
+    TYPOGRAPHY
+
+******************************************************/
+
+
+body {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 400;
+}
+
+.two-col {
+	@include breakpoint(lap) {
+		column-count: 2;	
+	}
+}
+
+p,span {
+	color: palette(grey);
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+
+h2 {
+	line-height: 1.15em;
+	font-weight: 500;
+	margin-bottom: 2em;
+	font-size: 1.6em;
+	@include breakpoint(desk-plus) {
+		font-size: 1.45em;
+		letter-spacing: -1px;
+	}	
+	@include breakpoint(desk-plus-plus) {
+		font-size: 1.8em;
+		letter-spacing: -1px;
+	}
+	.sub-title {
+		display: block;
+		color: palette(grey,x-light);
+		font-size: .7em;
+		line-height: 1.1em;
+		text-transform: none;
+	}
+}
+
+h2.push {
+	margin-bottom: 3.25em;
+}
+
+h2.pull {
+	margin-bottom: 1em;
+	@include breakpoint(desk-plus) {
+		margin-bottom: 1em;
+	}	
+	@include breakpoint(desk-plus) {
+		margin-bottom: 1.15em;
+	}
+}
+
+h3.pull {
+	margin-bottom: 1em;
+	@include breakpoint(desk-plus) {
+		margin-bottom: 1.15em;
+	}
+}
+
+
+h3 {
+	color: $pink;
+	font-weight: 300;
+	font-size: 1.25em;
+	margin-top: -14px;
+	@include breakpoint(desk-plus) {
+		font-size: 1.15em;
+	}	
+	@include breakpoint(desk-plus-plus) {
+		font-size: 1.45em;
+		    margin-top: 0;
+	}
+}
+
+
+
+
+section.intro h1 {
+	font-weight: 200;
+	@include breakpoint(lap) {
+		font-size: 2.1rem;
+		margin: 0.6em 0;
+	}
+	@include breakpoint(desk-plus-plus) {
+		font-size: 3rem;
+	}
+	.videoStrap {
+		font-weight: 400;
+		color: $white;
+		display: block;
+		font-size: 1.45em;
+    	
+		@include breakpoint(lap) {
+			line-height: 1;
+		}		
+		@include breakpoint(desk) {
+			line-height: 1.15;
+			letter-spacing: -0.035em;
+		}
+	}
+
+}
+
+
+
+
+/* NAVIGATION */
+
+.nav-collapse a {
+	font-family: "Gotham SSm A", "Gotham SSm B";
+	font-style: normal;
+	font-weight: 700;
+	font-size: .85em;
+}
+
+
+
+
+
+
+/* ====================================
+	FusionBanking Essence Digital
+   ==================================== */
+
+
+.fusion-banking-essence {
+	h4 {
+		font-size: 1.15em;
+		&:after {
+			border-bottom: 1px dotted $pink;
+			content: "";
+			width: 50%;
+		    display: block;
+		    padding-top: 2em;
+		    margin: auto;
+		}
+	}
+	.ipad-video {
+		p {
+			font-size: .9rem;
+			line-height: 1.8;
+			margin-top: 2em;
+		}
+	}
+
+}
+
+
+
+
+/* ====================================
+   Experience Misys Digital
+   ==================================== */
+
+
+.misys-digital  {
+	h3 {
+		// margin: 2em 0 0 0;
+		display: block;
+		&:before {
+			border-top: 1px dotted palette(grey);
+			content: "";
+			width: 50%;
+		    display: block;
+		    padding-top: 2em;
+		    margin: auto;
+		}
+	}
+	p {
+		@include breakpoint(lap) {
+			padding: 0 3em;	
+		}	
+		@include breakpoint(desk) {
+			padding: 0 5em;	
+		}		
+		@include breakpoint(desk-plus) {
+			padding: 0 15em;	
+			font-size: .85rem;
+		}		
+		@include breakpoint(desk-plus-plus) {
+			padding: 0 5em;	
+			font-size: 1rem;
+		}
+		strong {
+			color: $base;
+		}		
+	}
+
+		p.experience-content {
+			font-size: .9rem;
+			// width: 64%;
+			margin: auto;
+			padding:0;
+			@include breakpoint(desk) {
+				    font-size: .9rem;
+				    margin: auto;
+				    padding: 0;
+				    margin-left: -136px;
+				    text-align: left;
+				    padding: 20px;
+				    padding-left: 30px;
+				    margin-top: 50%;
+				    border-left: 1px solid #ccc;
+				    width: 100%;
+			}
+			@include breakpoint(desk-plus) {
+				margin-left: -200px;
+				margin-top: 45%;
+			}
+
+			&.txtLarge {
+				@include breakpoint(desk) {
+					margin-top: 26%;
+				}				
+				@include breakpoint(desk-plus) {
+					margin-top: 35%;
+				}
+			}
+	}
+
+}
+
+
+/* CAROUSELS */
+
+
+/* ====================================
+	Hear it from our customers
+   ==================================== */
+
+.video-carousel {
+	p {
+	    margin: 3em 0 6em 0;
+	    font-size: 1.05em;
+	    line-height: 1.8;	
+	}
+	.item-caption {
+		width: 80%;
+		margin: 0 auto 2em auto;
+		@include breakpoint(desk-plus) {
+			width: 100%;
+		}
+		@include breakpoint(desk-plus-plus) {
+			width: 80%;
+		}
+		span.h2 {
+			font-weight: 700;
+			color: $base;
+			font-size: 1.15em;    
+			margin-top: 1em;
+    		margin-bottom: 0;
+    		display: block;
+		}
+		p {
+			font-size: .9rem;
+			margin: 1em 0 .5em 0;
+			color: $base;
+			em {
+				color: $pink;
+				font-style: normal;
+				font-weight: 800;
+			}
+			@include breakpoint(desk-plus) {
+				font-size: .85rem;
+			    margin: .75em 0;
+			    line-height: 1.65;
+			}
+			@include breakpoint(desk-plus-plus) {
+				font-size: .9rem;
+				margin: 1em 0 .5em 0;
+				line-height: 1.8;
+			}
+		}
+	}
+}
+
+
+
+/* AWARDS CAROUSELS */
+
+#owl-awards p {
+	font-size: .9rem;	
+	@include breakpoint(lap) {
+			padding: 0 3em;	
+		}		
+		@include breakpoint(lap) {
+			padding: 0 5em;	
+		}
+}
+
+
+/* LEARN MORE */
+
+section.learn-more {
+	a {
+		color: $base;
+		text-decoration: none;
+		&:hover {
+			color: $pink;
+		}
+		p {
+			&:hover {
+				color: $pink;
+			}
+		}
+	}
+	h2 {
+		text-align: center;
+	}
+	h3 {
+		font-weight: 700;    
+		font-size: 1em;
+    	line-height: 1.15;
+    	margin-top: 0;
+    	margin-bottom: 0;
+    	color: $base;
+	}
+	p {
+		margin-top: .5em;
+		font-size: .9rem;
+		@include breakpoint(desk-plus) {
+			font-size: .8rem;
+		}		
+		@include breakpoint(desk-plus-plus) {
+			font-size: .9rem;
+		}
+	}
+}
+
+
+
+
+
+
+/* FORM */
+
+
+
+form {
+	input,
+	textarea {
+		font-size: 1.2em;
+		font-family: "Gotham SSm A", "Gotham SSm B";
+	}
+	label {
+		font-size:.85em;
+	}
+	
+}
+
+
+
+
+/* tooltipster-sidetip */
+
+.tooltipster-sidetip.tooltipster-noir .tooltipster-box {
+	h3 {
+		font-weight: 700;
+		font-size: 1em;
+		color: #222;
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+	p {
+		font-size: .85em;
+	}
+}
+
+
+.tooltipster-sidetip.tooltipster-shadow .tooltipster-box {
+	h3 {
+		font-weight: 700;
+		font-size: .85em;
+		color: #222;
+	}
+}
+
+

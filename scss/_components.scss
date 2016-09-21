@@ -1,0 +1,279 @@
+/******************************************************
+    
+    COMPONENTS
+
+    Blocks/elements that aren't integral to the page layout.
+    e.g. buttons, tabs, panels etc.
+
+******************************************************/
+
+
+/*
+	buttons
+*/
+
+.btn {
+	background-color: $pink;
+	color: $white;
+	border-radius: 30px;
+	text-decoration: none;
+	transition: ease .24s;
+	padding: .75em 1em;
+	margin: .8em 0;
+	display: block;
+	text-align: center;
+	font-weight:300;
+	font-size: 1em;
+
+	@include breakpoint(lap) {
+		padding: .7em 3.5em;	
+		background-image: url('../img/btn-arrow.png');
+		background-repeat: no-repeat;
+		background-position: 92% 50%;
+		font-size: 1.2em;
+	}
+	&:hover {
+		background-color: $base;
+
+	}
+	&.disabled {
+		background-color: palette(grey,xx-light);
+		color: palette(grey);
+		opacity: .4;
+		&:hover {
+			opacity: .4;
+		}
+	}
+	@include breakpoint(lap) {
+		display: inline-block;
+		margin: .8em .8em .8em 0;
+	}
+}
+
+
+
+.download-btn {
+    background-color:  $pink;
+    border-radius: 100px;
+    padding: .7em 1em;
+    text-align: center;
+    color: #fff;
+    font-size: 0.85em;
+    width: 100%;
+    font-weight:300;
+    transition: ease .24s;
+    &:hover {
+    	background-color: $base;
+    }
+    @include breakpoint(desk) {
+		position: absolute;
+		bottom: 0;
+		width: 60%;
+    }
+    .chevron {
+    	display: inline-block;
+    	color: #fff;
+    	margin-left: 12px;
+    }
+}
+
+span.fa.fa-download {
+    margin-right: 8px;
+    color: #fff;
+}
+
+
+
+
+.demo-btn {
+	display: none;
+	@include breakpoint(lap) {
+	    float: right;
+	    padding-top: 16px;
+		display: block;
+	    a {
+		    background: #f48d7e;
+		    border-radius: 30px;
+		    color: #fff;
+		    padding: 10px;
+		    font-size: .80em;
+		    font-weight: bold;
+		    text-decoration: none;
+		}		
+	}
+
+}
+
+
+
+
+/*
+	panels & dividers
+*/
+
+.panels-wrap {
+	padding: 1em 0;
+}
+
+.panel {
+	background-color: #f7f7f7;
+	border: 1px solid palette(grey,xx-light);
+	border-radius: .3em;
+	padding: 1em;
+	text-align: left;
+	margin-bottom: 1em;
+	h3 {
+		margin: 0;
+	}
+}
+
+
+.arrow-divider {
+	display: block;
+	margin: 2em 0;
+	width: 100%;
+	position: relative;
+	height: 1px;
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzliOTY4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #ffffff 0%, #9b968c 49%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(49%,#9b968c), color-stop(100%,#ffffff));
+	background: -webkit-linear-gradient(left,  #ffffff 0%,#9b968c 49%,#ffffff 100%);
+	background: -o-linear-gradient(left,  #ffffff 0%,#9b968c 49%,#ffffff 100%);
+	background: -ms-linear-gradient(left,  #ffffff 0%,#9b968c 49%,#ffffff 100%);
+	background: linear-gradient(to right,  #ffffff 0%,#9b968c 49%,#ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 );
+	&:after, &:before {
+		top: 0px;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+	&:after {
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #ffffff;
+		border-width: 20px;
+		margin-left: -20px;
+	}
+	&:before {
+		border-color: rgba(194, 225, 245, 0);
+		border-top-color: #9b968c;
+		border-width: 22px;
+		margin-left: -22px;
+	}
+}
+
+.arrow-divider--yellow {
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzliOTY4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #FDC126 0%, #ffffff 49%, #FDC126 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#FDC126), color-stop(49%,#ffffff), color-stop(100%,#FDC126));
+	background: -webkit-linear-gradient(left,  #FDC126 0%,#ffffff 49%,#FDC126 100%);
+	background: -o-linear-gradient(left,  #FDC126 0%,#ffffff 49%,#FDC126 100%);
+	background: -ms-linear-gradient(left,  #FDC126 0%,#ffffff 49%,#FDC126 100%);
+	background: linear-gradient(to right,  #FDC126 0%,#ffffff 49%,#FDC126 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FDC126', endColorstr='#FDC126',GradientType=1 );
+	&:after {
+		border-top-color: #FDC126;
+	}
+	&:before {
+		border-top-color: #ffffff;
+	}
+}
+
+.arrow-divider--blue {
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzliOTY4YyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #1FA9E0 0%, #ffffff 49%, #1FA9E0 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1FA9E0), color-stop(49%,#ffffff), color-stop(100%,#1FA9E0));
+	background: -webkit-linear-gradient(left,  #1FA9E0 0%,#ffffff 49%,#1FA9E0 100%);
+	background: -o-linear-gradient(left,  #1FA9E0 0%,#ffffff 49%,#1FA9E0 100%);
+	background: -ms-linear-gradient(left,  #1FA9E0 0%,#ffffff 49%,#1FA9E0 100%);
+	background: linear-gradient(to right,  #1FA9E0 0%,#ffffff 49%,#1FA9E0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1FA9E0', endColorstr='#1FA9E0',GradientType=1 );
+	&:after {
+		border-top-color: #1FA9E0;
+	}
+	&:before {
+		border-top-color: #ffffff;
+	}
+}
+
+
+
+/*
+	forms
+*/
+
+form {
+	max-width: 65em;
+	margin: 0 auto;
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+		padding: .6em;
+		margin: .8em 0;
+		border-radius: .3em;
+		border: 2px solid palette(grey,xx-light);
+	}
+}
+
+
+//  owl carousel
+
+// .owl-carousel {
+// 	background-color: palette(grey,xx-light);
+// 	.owl-item {
+// 		text-align: left;
+// 		padding: 1em;
+// 		height: 100%;
+// 		&:first-child {
+// 			border: 0;
+// 		}
+// 		@include breakpoint(lap) {
+// 			border-left: 1px dashed palette(grey,x-light);
+// 		}
+// 	}
+
+// 	.owl-page {
+// 		text-indent: -9999px;
+// 		width: 14px;
+// 		height: 14px;
+// 		background-color: palette(grey,x-light);
+// 		display: inline-block;
+// 		margin: 1em .3em;
+// 		border-radius: 50%;
+// 		&.active {
+// 			background-color: palette(grey);
+// 		}
+	
+// 	}
+
+// }
+
+
+
+// tables 
+
+table.comparison {
+	width: 100%;
+	color: palette(grey);
+	td {
+		padding: 7px 5px;
+	}
+	th {
+		background: palette(grey);
+		color: $white;
+		padding: 10px 5px;
+	}
+	tr:nth-child(odd) {
+		td {
+			background: #f3f3f3;
+		}
+	}
+}

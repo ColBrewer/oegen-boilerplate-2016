@@ -1,0 +1,1040 @@
+/******************************************************
+    
+    LAYOUT
+
+    Blocks/elements integral to the layout
+    of the page.
+
+******************************************************/
+
+
+/*
+	global stuff
+*/
+
+a {
+	color: palette(grey);
+}
+
+.wrapper {
+	text-align: center;
+}
+
+
+.wrapper__inner {
+	max-width: $max-width;
+	text-align: center;
+	margin: 0 auto;
+	padding: 4em 1em;
+	border-bottom: 3px dotted palette(grey, x-light);
+	height: auto;
+	@include group();	
+
+	@include breakpoint(lap) {
+		padding: 5em 2em 5em 2em;
+		
+	}
+	@include breakpoint(desk) {
+		padding: 5em 2em 5em 2em;
+		
+	}	
+	@include breakpoint(desk-plus) {
+		padding: 1em 2em 2em 2em;
+		
+	}
+	@include breakpoint(desk-plus-plus) {
+		padding: 5em 2em 5em 2em;
+	}
+
+	@media (min-height: 860px) and (min-width: 1024px) {
+		// height: 110vh;
+		padding: 5em 2em 5em 2em;
+	}
+
+}
+
+
+.misys-digital .wrapper__inner {
+
+	// @include breakpoint(lap) {
+	// 	padding: 6em 2em 8em 2em;
+	// }
+
+	@include breakpoint(desk-plus-plus) {
+		padding: 3em 2em 6em 2em;
+	}
+
+	@media (min-height: 860px) and (min-width: 1024px) {
+		height: 115vh;
+	}
+
+	.owl-carousel .owl-item img {
+		// max-width: 450px;
+		display: block;
+		margin: 0 auto;
+		@include breakpoint(desk-plus-plus) {
+			max-width: none;
+		}
+	}
+
+	// .owl-theme .owl-controls {
+	// 	margin-top: 0;
+	// }
+
+	#owl-images .owl-stage-outer {
+		margin-bottom: 0;
+		@include breakpoint(desk-plus) {
+			margin-bottom: -20px;
+		}		
+		@include breakpoint(desk-plus-plus) {
+			margin-bottom: 0;
+		}
+	}
+
+}
+
+
+
+header .wrapper__inner {
+	border: 0;
+	padding: 0;
+	@include breakpoint(lap) {
+		padding: 0 15px; 
+	}
+	@include breakpoint(desk-plus-plus) {
+		padding: 0 15px;
+	}
+
+	@media (min-height: 820px) and (min-width: 1024px) {
+		height: auto;
+	}
+}
+
+
+
+
+section.footer-logo .wrapper__inner {
+	height: auto;
+	border: 0;
+	padding: 5em 2em 8em 2em;
+}
+
+
+
+.header-video {
+	max-width: $max-width-video;
+	margin: auto;
+		@include breakpoint(lap) {
+			height: 100vh !important;
+		}
+		@include breakpoint(desk) {
+			height: 88vh !important;
+		}
+}
+
+
+/*
+	alignment classes
+*/
+
+.align-center {
+	text-align: center;
+}
+
+
+.wrapper--intro {
+	position: relative;	
+}
+
+
+section {
+  text-align: center;
+  width: 100%;
+
+  @include group();
+}
+
+
+
+
+
+/* ====================================
+   INTRO  --  Hero Video MOBILE
+   ==================================== */
+
+section.intro.mobile {
+	display: block;
+	height: 690px;
+	  	@include breakpoint(lap) {
+	  		display: none;
+	  	}
+	  	.header-video {
+	  		margin-top: 0;
+	  		position: inherit;
+	  		iframe {
+	  			height: 600px;
+	  			position: relative;
+	  		}
+	  	}
+	  	.header-video iframe, .header-video video {
+	  		z-index: 100;
+	  	}
+	  	.play-btn {
+	  		position: relative;
+	  		z-index: 1;
+	  		top: 50%;
+	  	}
+	  	.header-video__close-trigger {
+		    z-index: 101;
+		    top: 150px;
+		}
+	  	img.banner-video {
+	  		position: absolute;
+		    left: 0;
+		    top: 277px;
+		    z-index: 0;
+		    width: 100%;
+	  	}
+	  	.container {
+	  		padding: 1em ;
+	  		position: inherit;
+	  		margin-top: 100px;
+	  		top: 0;
+	  	}
+	  	.mob-video-wrap {
+	  		width: 100%;
+    		height: 391px;
+    		background-image: url('../img/video-banner01-open.jpg') ;
+    		background-size: 100% 100%, cover;
+	  	}
+	  	h1 {
+	  		color: $base;
+	  		font-size: 1.65em;
+	  		.videoStrap {
+		  		font-weight: 200;
+	    		color: $base;
+	    		font-size: 1.65rem;	  			
+	  		}
+
+	  	}
+}
+
+
+
+
+
+
+/* ====================================
+   INTRO  --  Hero Video DESKTOP
+   ==================================== */
+
+
+
+section.intro.desk {
+	display: none;
+	  	@include breakpoint(lap) {
+	  		display: block;
+	  	}
+
+}
+
+
+section.intro {
+	height: 400px;
+	padding-top: 0;
+	padding-bottom: 0;
+	border: 0;
+		@include breakpoint(lap) {
+			height: auto;
+		}
+	h1, p, .moreInfo {
+		position:relative;
+		z-index: 100;
+		color:#fff;
+	}
+	p {
+		display: block;
+		margin-bottom: 3em;
+	}
+}
+
+
+.header-video {
+  position: relative;
+  margin-top:100px;
+  padding-bottom: 0;
+  	@include breakpoint(lap) {
+		padding-bottom: 0;
+		overflow: hidden;
+		margin-top: 65px;
+	}
+}
+
+.header-video iframe,
+.header-video video {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  display: block;
+
+	  @include breakpoint(lap) {
+	  background-color: #000;
+	  }
+}
+
+.header-video video.header-video__teaser-video {
+	display:none;
+	@include breakpoint(lap) {
+		display: block;
+		top: -4em;
+	}
+	@include breakpoint (desk-plus) {
+		top: 0;
+	}
+}
+
+.header-video iframe {
+  height: 100%;
+  width: 100%;
+}
+
+.header-video video {
+  width: 100%;
+}
+
+.header-video__teaser-video {
+  width: 100%;
+  height: auto; 
+}
+
+.header-video__media {
+  width: 100%;
+  height: 361px;
+  position: absolute;
+  top:0;
+  left:0;
+  	@include breakpoint(lap) {
+		height: 58vh;
+		top:0;
+		left: 0;
+	}
+  	@include breakpoint(desk) {
+		height: 79vh;
+	}
+}
+
+.header-video__play-trigger {
+  position: absolute ;
+  background-image: url('../img/play-btn.png');
+  background-repeat:no-repeat;
+  width: 92px;
+  height: 92px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: background .5s;
+  -moz-transition: background .5s;
+  transition: background .5s;    
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+}
+
+.header-video__play-trigger:hover {
+  background-image: url('../img/play-btn--hover.png');
+}
+
+
+
+
+/**
+  Just some basic styling for the closing trigger
+**/
+
+.header-video__close-trigger {
+  z-index: 99;
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  background: #000;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 1em ;
+  border-radius: 50%;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  transition: background .3s;  
+  border: none;
+}
+
+.header-video__close-trigger:hover {
+  background: rgba(0,0,0,.25);
+  cursor: pointer;
+}
+
+.header-video__close-trigger:before {
+  color: #fff; /* Edit this to change the icon color */
+  font: normal 24px "responsivenav"; /* Edit font-size (28px) to change the icon size */
+  text-transform: none;
+  text-align: center;
+  content: "\78"; /* Close icon */
+  -webkit-transition:  .5s;
+  -moz-transition:  .5s;
+  transition:  .5s; 
+}
+
+.header-video__close-trigger:hover.header-video__close-trigger:before {
+	color: rgba(255,255,255,.5)
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 3em 2em;
+  position: relative;
+  top: 2%;
+  	@include breakpoint(lap) {
+		padding: 2em 2em;
+		top: 2%;
+	}  	
+	@include breakpoint(desk-plus-plus) {
+		padding: 2em 2em;
+		top: 10%;
+	}
+	.play-btn {
+		width: 100%;
+	    display: block;
+	    margin: 5em auto 8em auto;
+	    text-align: center;
+	    float: left;
+	    position: relative;
+	    z-index: 101;
+	  	@include breakpoint(lap) {
+	    	margin: 2.5em auto 7em auto;
+		}  	
+		@include breakpoint(desk) {
+	    	margin: 5em auto 8em auto;
+		}
+	}
+	.moreInfo {
+		display: block;
+		width: 100%;
+		float: left;
+		a {
+			border-top: rgba(255,255,255,.5) 1px solid;	
+			color: $white;
+			text-decoration: none;
+			padding: 2em 0;
+			background: url(../img/more-dwn-arrow.png) no-repeat 50% 64px;
+			&:hover {
+				color: $pink;
+				background-image: url(../img/more-dwn-arrow-hover.png);
+			}
+		}
+
+	}
+}
+
+
+
+
+/* ====================================
+   THE OPPORTUNITY
+   ==================================== */
+
+
+
+.infographic {
+	img {
+		// width: 100%;
+		// max-width: 100%;
+		display: none;
+	    max-height: 370px;
+	    width: auto;
+	    margin: 0 auto;
+		@include breakpoint(lap) {
+			display: block;
+		}
+		@include breakpoint(desk-plus) {
+			margin-bottom: -1em;
+		}
+		@include breakpoint(desk-plus-plus) {
+			max-height: none;
+			width: 85%;
+			margin-bottom: auto;
+		}
+	}
+
+}
+
+
+
+
+
+
+/* ====================================
+   CAROUSELS
+   ==================================== */
+
+
+
+
+.video-carousel {
+	.wrapper__inner {
+		padding-left:0;
+		padding-right: 0;
+	}	
+
+}
+
+.video-carousel .owl-carousel .owl-item  {
+  opacity: 0.25;
+transition: ease .24s;
+}
+
+.video-carousel .owl-carousel .owl-item.active  {
+	opacity:1;
+}
+
+.bc-player-SJgTN4om_default {
+	max-width: 100%;
+}
+
+
+.bc-iframe, .bc-iframe body, .bc-player-SJgTN4om_default {
+	background-color: transparent!important;
+}
+
+.video-carousel {
+
+		.item {
+
+			.btpn {
+				    background-repeat: no-repeat;
+    				background-position: 50% 50%;
+    				background-size: contain;
+    				background-image: url(../img/video-bkg-btpn.jpg);
+			}
+			.hal-bosher {
+				    background-repeat: no-repeat;
+    				background-position: 50% 50%;
+    				background-size: contain;
+    				background-image: url(../img/video-bkg-hal-bosher.jpg);
+			}			
+			.luis-amado {
+				    background-repeat: no-repeat;
+    				background-position: 50% 50%;
+    				background-size: contain;
+    				background-image: url(../img/video-bkg-luis-amado.jpg);
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================
+   FusionBanking Essence Digital - 
+   Ipad video and interactive thing
+   ==================================== */
+
+.interactive-ipad {
+	margin-top: 2em;
+	width: 80%;
+	@include breakpoint(desk-plus-plus) {
+		width: 100%;
+	}
+}
+
+
+.misys-wow-video {
+	width: 100%;
+	@include breakpoint(lap) {
+		width: 66%;
+		margin: 0 auto;
+	}		
+	@include breakpoint(desk-plus-plus) {
+		width: 100%;
+	}	
+}
+
+
+img[usemap] {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+
+
+.engage-mobile {
+	display: block;
+	@include breakpoint(lap) {
+		display: none;
+	}	
+}
+
+.interactive-ipad {
+	display: none;
+	@include breakpoint(lap) {
+		display: block;
+	}	
+}
+
+// accordion
+
+.accordion {
+	.wrapper {
+		border-top: 1px dashed palette(grey, x-light);
+		border-bottom: 1px dashed palette(grey, x-light);
+		transition: ease .24s;
+
+		&:first-child {
+			border-bottom: 0;
+		}
+		&:hover {
+			background-color: palette(grey, xx-light);
+		}
+		&.active {
+			
+			h3 {
+				color: $pink;
+				span {
+					color: $pink;
+				}
+			}
+		}
+		p {
+			color: $base;
+		}	
+
+	}
+	.wrapper__inner {
+		padding: 1em;
+		padding-bottom: 0;
+		margin: 0;
+		text-align: left;
+		border-bottom: 0;
+		height: auto;
+	}
+	.accordion__title {
+		padding: 1em 0 0 0;
+		cursor: pointer;
+		@include group();
+	} 
+	.accordion__content {
+		max-height: 0px;
+		overflow: hidden;
+		transition: ease  .5s;
+		&.show {
+			max-height: 1500px;
+		}
+		.inner {
+			padding-bottom: 2em;
+		}
+	}
+	h3 {
+		margin: 10px 0 0;
+		vertical-align: middle;
+		display: inline-block;
+		float: left;
+		width: 90%;
+		font-weight: 700;
+    	font-size: 1em;
+    	line-height: 1.15;
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			border-style: solid;
+			border-width: 2px;
+			border-radius: 50%;
+			font-size: .7em;
+			width: 26px;
+			height: 26px;
+			text-align: center;
+			display: inline-block;
+			margin-right: .8em;
+			margin-top: -6px;
+		}
+	}
+
+	.open-closed {
+		width: 40px;
+		height: 40px;
+		background-image: url(../img/open-closed.png);
+		background-repeat: no-repeat;
+		background-position: 0 8px;
+		float: right;
+		transition: ease .24s;    
+		position: relative;
+	    top: -32px;
+	}
+
+	.open {
+		.open-closed {
+			background-position: 0 -42px;
+		}
+	}
+
+
+
+}
+
+
+
+
+
+
+
+/* ====================================
+   Experience Misys Digital
+   ==================================== */
+
+
+
+
+.experience-carousel-image {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    margin: 0 auto;
+    @include breakpoint(desk-plus) {
+    	width: 70%;
+    }    
+    @include breakpoint(desk-plus-plus) {
+    	width: 84%;
+    }
+}
+
+
+
+
+
+
+/* ====================================
+   LEARN MORE
+   ==================================== */
+
+
+
+section.learn-more .wrapper__inner .inner {
+	text-align: center;
+		max-width: 55em;
+	@include breakpoint(lap) {
+		text-align: left;
+		max-width: 55em;
+	}
+	@include breakpoint(desk) {
+		max-width: 75em;
+	}
+}
+
+section.learn-more img {
+	margin-bottom: 2em;
+	@include breakpoint(lap) {
+		float: right;
+		margin-bottom: 0;
+	}	
+}
+
+section.learn-more .grid .grid {
+	margin-bottom: 3em;
+
+	@include breakpoint(desk-plus) {
+		margin-bottom: 1.5em;
+	}
+	@include breakpoint(desk-plus-plus) {
+		margin-bottom: 5em;
+	}
+
+     @media  screen and  (max-width: 480px)  {
+		border-bottom: 1px solid palette(grey, xx-light);
+    	padding-bottom: 3em;	
+     }
+}
+
+
+
+section.learn-more .learn-txt {
+	@include breakpoint(desk) {
+		min-height: 240px;
+	}	
+	@include breakpoint(desk-plus) {
+		min-height: 216px;
+	}	
+	@include breakpoint(desk-plus-plus) {
+		min-height: 240px;
+	}
+
+}
+
+section.learn-more .wrapper__inner > .grid {
+	@include breakpoint(lap) {
+		margin-left: -48px;		
+	}
+}
+
+
+
+
+/* ====================================
+   Success Stories
+   ==================================== */
+
+
+
+.vjs-poster {
+	background-color: $white!important;
+}
+
+
+
+
+
+/* ====================================
+   Success Stories
+   ==================================== */
+
+
+
+/* ====================================
+   Request a Demo - MKTO FORM
+   ==================================== */
+
+
+
+	.form-wrap .mktoForm {
+			border-top: 0;
+			max-width: 65em;
+		}
+
+	.form-wrap .mktoForm .mktoButtonRow .mktoButtonWrap {
+			text-align: center!important;
+		}
+
+	.form-wrap .mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+		background-color: $pink!important;
+		padding: 1em 6em!important;
+		border-radius: 50px;  
+		-webkit-transition:  25s;
+		-moz-transition:  .25s;
+		transition:  .25s;  
+	}
+
+	.form-wrap .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover {
+		background-color: $base!important;
+	}
+
+
+	.form-wrap .mktoForm .mktoField {
+			width: 100%!important;
+		}
+	.form-wrap .mktoForm .mktoCheckboxList, .mktoRadioList {
+			width:60px!important;
+			padding: 0!important;
+		}
+	.form-wrap .mktoForm .mktoButtonRow {
+			margin-top: 2em!important;
+		}
+	.form-wrap .mktoForm .mktoFormRow .mktoFormCol {
+		     @media  screen and  (max-width: 480px)  {
+				width: 100%;
+		     }		
+		}
+
+
+	.form-wrap .mktoForm input[type=url], 
+	.form-wrap .mktoForm input[type=text], 
+	.form-wrap .mktoForm input[type=date], 
+	.form-wrap .mktoForm input[type=tel], 
+	.form-wrap .mktoForm input[type=email], 
+	.form-wrap .mktoForm input[type=number], 
+	.form-wrap .mktoForm textarea.mktoField, 
+	.form-wrap .mktoForm select.mktoField {
+			padding: 6px 6px !important;
+		    border: 1px solid palette(grey,xx-light)!important;
+		    height: auto !important;
+		    border-radius: 0!important;
+		    font-size: 14px !important;
+		}	
+
+
+
+
+
+
+
+
+
+/* mobile layout*/
+
+// @media only screen and (max-device-width: 480px) {
+
+
+// 		form.mktoForm {
+// 		    height: 690px;
+// 		}
+// 		.form-wrap {
+// 			position: relative;
+// 		}
+// 		form.mktoForm .mktoFormRow .mktoFormCol:nth-of-type(2),
+// 		form.mktoForm .mktoButtonRow {
+// 			position: absolute;
+// 			bottom: 0;
+// 		}
+// 		form.mktoForm .mktoFormRow:nth-of-type(1) .mktoFormCol:nth-of-type(2) {
+// 			bottom: 200px;
+// 		}
+// 		form.mktoForm .mktoFormRow:nth-of-type(2) .mktoFormCol:nth-of-type(2) {
+// 			bottom: 160px;
+// 		}
+// 		form.mktoForm .mktoFormRow:nth-of-type(3) .mktoFormCol:nth-of-type(2) {
+// 			bottom: 120px;
+// 		}
+// 		form.mktoForm .mktoFormRow:nth-of-type(4) .mktoFormCol:nth-of-type(2) {
+// 			bottom: 80px;
+// 		}
+// 		form.mktoForm .mktoFormRow:nth-of-type(5) .mktoFormCol:nth-of-type(2) {
+// 			bottom: 40px;
+// 		}
+
+// 	}
+
+
+
+
+
+/* ====================================
+   AWARDS
+   ==================================== */
+
+
+section.awards .wrapper__inner  {
+	padding: 4em 0em 8em 0em;
+	@include breakpoint(lap) {
+		padding: 6em 0em 6em 0em;
+	}
+	@include breakpoint(desk-plus) {
+		padding: 4em 0em 4em 0em;
+	}	@include breakpoint(desk-plus-plus) {
+		padding: 8em 0em 8em 0em;
+	}
+}
+
+
+
+/* ====================================
+   FOOTER
+   ==================================== */
+
+
+
+
+#log {
+	background-color: $white;	
+    @include breakpoint(desk-plus-plus) {
+		display:none; 
+		position:fixed; 
+		bottom:0px; 
+		right:0px; 
+		width:100%;
+		z-index: 200;
+    }
+}
+
+
+footer {
+  padding: 1em;
+  border-top: 1px solid #e4e4e4;
+    @include breakpoint(lap) {
+      padding: 0 2em;
+    }
+}
+
+
+.social {
+    	text-align: center;
+    @include breakpoint(lap) {
+		float: left;
+    }
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			a {
+				text-indent: -9999px;
+				position: relative;
+				display: inline-block;
+				width: 34px;
+				height: 34px;
+				background-repeat: no-repeat;
+				background-image: url('../img/social-icons.png');
+				border: 1px solid palette(grey, x-light);
+				border-radius: 2px;    
+				-webkit-transition: 25s;
+    			-moz-transition: .25s;
+   				 transition: .25s;
+				&:hover {
+					border: 1px solid palette(grey, xx-light);
+				}
+			}
+			&.twitter {
+				a {
+					background-position: -3px -4px;
+				}
+			}
+			&.facebook {
+				a {
+					background-position: -3px -70px;
+				}
+			}
+			&.google {
+				a {
+					background-position: -3px -134px;
+				}
+			}
+			&.linked {
+				a {
+					background-position: -3px -201px;
+				}
+			}
+			&.youtube {
+				a {
+					background-position: -3px -267px;
+				}
+			}
+		}
+	}
+}
+
+.details {    	
+	text-align: center;
+	font-size: .85em;
+	margin-top: 10px;
+	@include breakpoint(lap) {
+		float: right;
+    }
+	span {
+		color: $pink;
+	}
+}
+
+
