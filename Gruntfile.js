@@ -28,7 +28,24 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+      uglify: {
+          dev: {                
+              options: {
+                  sourceMap: true,
+                  sourceMapName: 'js/main.js.map',
+                  beautify: true
+                },
+              files: {
+                  'js/main.min.js': ['js/vendor/*.js','js/main.js']
+                }
 
+          },
+          build: {
+              files: {
+                  'js/main.min.js': ['js/vendor/*.js','js/main.js']
+                }
+          }
+      },
     sass: {
       options: {
         // set loadpath to any external libraries or frameworks
@@ -110,10 +127,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
+   grunt.loadNpmTasks('grunt-contrib-uglify');
   
   // Where we tell Grunt what to do when we type "grunt" into the terminal.
-  grunt.registerTask('default', ['sass:dev', 'postcss:dev', 'watch']);
-  grunt.registerTask('build', ['sass:build', 'postcss:dev', 'watch']);
+  grunt.registerTask('default', ['sass:dev', 'uglify:dev', 'postcss:dev', 'watch']);
+  grunt.registerTask('build', ['sass:build', 'uglify:build', 'postcss:dev', 'watch']);
 
   // Starts livereload (requires browser plugin: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
   // Starts 'connect' for local environment
